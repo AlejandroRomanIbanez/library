@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Book</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('home') }}" class="back-home-button">Back to Home</a>
+        <h1>Add Book</h1>
+    </header>
+
+    <form action="/add_book" method="POST">
+        <label for="title">Book Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        <label for="author">Select an author:</label>
+        <select name="author" id="author">
+            {% for author in authors %}
+                <option value="{{ author.id }}">{{ author.name }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" class="add-button" value="Add Book">
+    </form>
+
+</body>
+</html>

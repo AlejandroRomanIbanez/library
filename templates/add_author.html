@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Author</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <header>
+      <a href="{{ url_for('home') }}" class="back-home-button">Back to Home</a>
+      <h1>Add Author</h1>
+    </header>
+
+  <form action="/add_author" method="POST">
+    <label for="name">Author Name:</label> 
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="birthdate">Birthdate:</label> 
+    <input type="date" id="birthdate" name="birthdate" required><br><br> 
+    <label for="date_of_death">Date of Death:</label> 
+    <input type="date" id="date_of_death" name="date_of_death"><br><br>
+    <input type="submit"  class="add-button" value="Add Author"> 
+  </form>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ book_info.title }} - Book Description</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>{{ book_info.title }}</h1>
+  </header>
+
+  <div class="book-details">
+    <img src="{{ book_info.cover_url }}" alt="Book Cover">
+    <p>{{ book_info.description }}</p>
+    <span>{{ book_info.publication_year }}</span>
+  </div>
+
+  <a href="{{ url_for('home') }}" class="back-home-button">Back to Home</a>
+</body>
+</html>

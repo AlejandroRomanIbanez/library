@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ author.name }} - Author Description</title>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>{{ author.name }}</h1>
+  </header>
+
+  <div class="author-details">
+    {% if author_info.image_url %}
+      <img src="{{ author_info.image_url }}" alt="{{ author.name }}'s Image">
+    {% endif %}
+    <p>{{ author_info.description }}</p>
+    <p>Date of Birth: {{ author.birth_date }}</p>
+    <p>Date of Death: {{ author.death_date }}</p>
+  </div>
+
+  <a href="{{ url_for('home') }}" class="back-home-button">Back to Home</a>
+</body>
+</html>
